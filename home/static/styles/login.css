@@ -1,0 +1,50 @@
+h1.gothic-text {
+    font-family: 'Old English Text MT', serif;
+    color: #f8f9fa;
+    text-shadow: 3px 3px 10px #000000;
+    font-size: 2.5rem;
+}
+
+.gothic-text {
+    font-family: 'Old English Text MT', serif;
+    color: #f8f9fa;
+}
+
+.dark-form .form-label {
+    font-weight: 600;
+    color: #e2e2e2;
+}
+
+.dark-form .form-control {
+    background-color: #2a2a2a;
+    border: 1px solid #444444;
+    color: #f8f9fa;
+    border-radius: 0.5rem;
+}
+
+.btn-dark {
+    background-color: #343a40;
+    border-color: #444444;
+    color: #ffffff;
+}
+
+.btn-dark:hover {
+    background-color: #565e64;
+    border-color: #565e64;
+}
+
+.text-shadow {
+    text-shadow: 1px 1px 5px #000000;
+}
+
+.text-shadow-gothic {
+    text-shadow: 3px 3px 8px #000000;
+}
+
+.alert-danger {
+    background-color: #aa2e25;
+    border-color: #aa2e25;
+    color: #f8f9fa;
+}
+
+

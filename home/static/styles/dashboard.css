@@ -1,0 +1,108 @@
+/* Estilo General */
+body {
+    font-family: 'Cinzel', serif; /* Fuente gótica y elegante */
+    background-color: #0d0d0d; /* Fondo negro profundo */
+    color: #dcdcdc; /* Texto claro */
+    letter-spacing: 0.5px;
+}
+
+/* Contenedor del dashboard */
+.dashboard-container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
+    border: 1px solid #3a3a3a;
+}
+
+/* Encabezado del dashboard */
+.dashboard-header h1 {
+    color: #909090; /* Gris claro para el título */
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+    font-family: 'Cinzel', serif; /* Estilo de título elegante */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Sección de resumen */
+.dashboard-summary h2 {
+    font-size: 32px;
+    color: #909090; /* Gris claro */
+    margin-bottom: 25px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+}
+
+.summary-card {
+    background-color: #262626; /* Fondo gris oscuro */
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid #444;
+}
+
+.summary-card p {
+    font-size: 22px;
+    color: #dcdcdc;
+}
+
+.summary-card span {
+    font-weight: bold;
+    color: #909090; /* Gris claro */
+}
+
+/* Sección de acciones */
+.dashboard-actions h2 {
+    font-size: 32px;
+    color: #909090;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.btn-action {
+    background-color: #2e2e2e; /* Fondo gris oscuro */
+    color: #dcdcdc; /* Texto claro */
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease;
+    border: 1px solid #444;
+    letter-spacing: 1px;
+}
+
+.btn-action:hover {
+    background-color: #404040; /* Un gris más claro para resaltar */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.9);
+    transform: translateY(-3px);
+    color: #fff; /* El texto se vuelve blanco al hacer hover */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard-container {
+        width: 95%;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .btn-action {
+        width: 100%;
+    }
+}

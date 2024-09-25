@@ -1,0 +1,159 @@
+/* Estilos generales */
+body {
+    background-color: #1c1c1c;
+    color: #f5f5f5;
+    font-family: 'Cinzel', serif;
+    background-image: url('https://path-to-your-resident-evil-background-image.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+h2 {
+    color: #e2b616;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px #000;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Contenedor principal */
+.container {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Barra de búsqueda */
+.input-group-text {
+    background-color: #303030;
+    color: #e2b616;
+    border: 1px solid #5c5c5c;
+}
+
+.form-control {
+    background-color: #2c2c2c;
+    color: #e2b616;
+    border: 1px solid #5c5c5c;
+}
+
+.form-control:focus {
+    border-color: #e2b616;
+    box-shadow: none;
+}
+
+/* Botón de eliminar miembro */
+.btn-primary {
+    background-color: #b82525;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ff1f1f;
+    color: #fff;
+}
+
+/* Tabla de miembros */
+.table {
+    background-color: #292929;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #333333;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #444;
+}
+
+.table-dark {
+    background-color: #1f1f1f;
+    color: #e2b616;
+    border-color: #444;
+}
+
+.table th,
+.table td {
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table-dark th {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.table th {
+    background-color: #222;
+}
+
+.table td {
+    color: #f5f5f5;
+}
+
+.text-center {
+    text-align: center;
+    font-style: italic;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Estilo para el input de búsqueda */
+#searchNickname {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#searchNickname::placeholder {
+    color: #999;
+}
+
+/* Hover y animaciones */
+a:hover {
+    color: #e2b616;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+tr {
+    transition: background-color 0.3s ease;
+}
+/* Prueba deshabilitando estos estilos por si están interfiriendo */
+.table-hover tbody tr:hover {
+    background-color: #333333; /* Puedes cambiarlo temporalmente a un color claro para asegurarte de que las filas sean visibles */
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #444; /* Cambia a un borde más visible para asegurarte de que la tabla está correctamente renderizada */
+}
+

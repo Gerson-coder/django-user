@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Village</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+
+    <!-- Custom Resident Evil Village Style -->
+    <link rel="stylesheet" href="{% static 'styles/base.css' %}">
+
+</head>
+
+<body>
+    
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        
+        <div class="container">
+            <img src="{% static 'media/logo.png' %}" alt="Logo" style="height: 40px; margin-right: 10px;">Bienvenidos a la fam Village</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li><a href="/" class="nav-link">INICIO</a></li>
+                    <li><a href="/events" class="nav-link">EVENTOS</a></li>
+                    <li><a href="/ranking" class="nav-link">RANKING</a></li>
+                    
+                    <li><a href="/dashboard" class="nav-link">ZONA SUBS</a></li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item"><a href="/members_fam" class="nav-link">MIEMBROS</a></li>
+                    <li class="nav-item"><a href="/logout" class="nav-link">SALIR</a></li>
+                    <li class="nav-item"><a class="nav-link">Hola, {{ user.username }}!</a></li>
+                    
+                    {% else %}
+                    <li class="nav-item"><a href="/login" class="nav-link">INGRESAR</a></li>
+                    <li class="nav-item"><a href="/signup" class="nav-link">REGISTRARSE</a></li>
+                    
+                    {% endif %}
+                    {% if user.is_authenticated and user.is_sub %}
+                    <li><a href="/delete_member" class="nav-link">ELIMINAR MIEMBRO</a></li>
+                    <li><a href="/restore_member" class="nav-link">RESTAURAR MIEMBRO</a></li>
+                    {% endif %}
+                    
+                </ul>
+                
+                
+            </div>
+            
+        </div>
+    </nav>
+    <!-- Mensajes de error o información -->
+{% if messages %}
+<div class="container mt-3">
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<script>
+// Desaparecer automáticamente los mensajes después de 5 segundos (5000 ms)
+setTimeout(function() {
+let alerts = document.querySelectorAll('.alert');
+alerts.forEach(function(alert) {
+    alert.classList.remove('show');
+    alert.classList.add('fade');
+});
+}, 3000);
+</script>
+   
+
+    <!-- Content -->
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h7>© 2024 Village. Todos los derechos reservados.</h7>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

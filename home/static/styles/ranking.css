@@ -1,0 +1,55 @@
+
+    /* Background oscuro de tipo castillo o metalizado */
+   
+    .container {
+        position: relative; /* Para que el contenido se superponga al video de fondo */
+        z-index: 2; /* Asegura que el contenido esté por encima del fondo */
+        padding: 2px 0 ;
+        border-radius: 10px;
+    }
+
+    /* Sombras y tipografía estilo gótico */
+    .gothic-text {
+        font-family: 'Old English Text MT', serif;
+        color: #f8f9fa;
+    }
+
+    .text-shadow-gothic {
+        text-shadow: 2px 2px 8px #000000;
+    }
+
+    .text-shadow {
+        text-shadow: 1px 1px 5px #000000;
+    }
+
+    /* Estilo metálico para las primeras posiciones */
+    .table-champion {
+        background: linear-gradient(145deg, #b59841, #8e6c29);
+        color: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .table-runnerup {
+        background: linear-gradient(145deg, #767676, #4d4d4d);
+        color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Estilo general de la tabla */
+    .re-style-table {
+        border: 2px solid #666666;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    }
+
+    .table-bordered td, .table-bordered th {
+        border: 1px solid #666666;
+    }
+
+    /* Estilo para las filas comunes */
+    tbody tr:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .fs-4 {
+        font-size: 1.25rem;
+    }

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="dashboard-container">
+    <header class="dashboard-header">
+        <h1>Administración - Village</h1>
+    </header>
+
+    <link rel="stylesheet" href="{% static 'styles/dashboard.css' %}">
+
+    <section class="dashboard-summary">
+        <h2>Resumen</h2>
+        <div class="summary-card">
+            <p>Miembros Activos: <span>{{ total_miembros_activos }}</span></p>
+        </div>
+        <div class="summary-card">
+            <p>Miembros Eliminados: <span>{{ total_miembros_eliminados }}</span></p>
+        </div>
+    </section>
+
+    <section class="dashboard-actions">
+        <h2>Acciones</h2>
+        <div class="action-buttons">
+            <a href="{% url 'delete_member' %}" class="btn-action">Eliminar Miembro</a>
+            <a href="{% url 'restart_member' %}" class="btn-action">Restaurar Miembro</a>
+            <a href="{% url 'members_eliminated'%}" class="btn-action">Ver Miembros Eliminados</a>
+        </div>
+    </section>
+</div>
+
+
+<style>
+    body {
+    background-color: #fff;
+    background-image: url("{% static 'media/dashboard.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  </style>
+{% endblock %}

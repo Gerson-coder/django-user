@@ -1,0 +1,60 @@
+
+
+/* General */
+
+
+
+/* Título */
+.gothic-title {
+    font-size: 3rem;
+    font-family: 'Old English Text MT', serif;
+    color: #f0e2e1;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Etiquetas */
+.gothic-label {
+    font-family: 'Cinzel', serif;
+    color: #c0392b;
+    font-weight: bold;
+}
+
+/* Formulario */
+.dark-form .form-control {
+    background-color: #0c0d0e;
+    border: 1px solid #151617;
+    color: #ecf0f1;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dark-form .form-control:focus {
+    background-color: #31373c;
+    border-color: #1d1c1c;
+    box-shadow: none;
+}
+
+/* Botón */
+.gothic-button {
+    background-color: #000000;
+    border: none;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+}
+
+.gothic-button:hover {
+    background-color: #1d1c1c;
+    transition: background-color 0.3s ease;
+}
+
+/* Alerta de error */
+.alert-custom {
+    background-color: #e74c3c;
+    border: none;
+    color: #f8f9fa;
+    font-family: 'Cinzel', serif;
+}
+
+/* Tipografía */
+h1, .form-label, .btn {
+    font-family: 'Cinzel', serif;
+}

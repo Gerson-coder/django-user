@@ -1,0 +1,168 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Garamond', serif;
+}
+
+body {
+    background-color: #1b1b1b;
+    color: #e2e2e2;
+    background-image: url('https://cdn.wallpapersafari.com/70/95/XdbDbD.jpg'); /* Resident Evil Village-style background */
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: darken;
+    flex: 1;
+    padding: 0;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #2b2b2b; /* Dark and gothic */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #c9c9c9; /* A shade of gray */
+}
+
+.navbar-nav .nav-link {
+    color: #e2e2e2;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #c9c9c9;
+    text-shadow: 0 0 5px #fff; /* Glow effect */
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-color: #e2e2e2;
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.hero h1 {
+    color: #fff;
+    font-size: 3rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.container {
+    flex: 1;
+    margin-top: 30px;
+}
+
+h1, h2 {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    
+    color: #fff; /* Texto blanco */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: none; /* Sin sombra */
+}
+
+
+/* Responsive styling */
+@media (max-width: 1200px) {
+    .hero {
+        padding: 80px 50px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.1rem;
+    }
+
+    .hero {
+        padding: 60px 30px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    h1, h2 {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}

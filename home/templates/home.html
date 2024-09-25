@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <!-- Video Background -->
+    <video autoplay muted loop playsinline preload="metadata" id="background-video">    
+        <source src="{% static 'media/comprimido.mp4' %}" type="video/mp4">
+        Tu navegador no soporta video en HTML5.
+    </video>
+
+    <!-- Texto Bienvenida -->
+    <div class="text-center text-white mt-5 position-relative" id="welcome-section">
+        <h2 class="display-4">BIENVENIDOS A VILLAGE</h2>
+        <p>Únete a nuestras aventuras y eventos</p>
+    </div>
+
+    
+
+    <!-- Sección de Eventos -->
+    <div class="text-center text-white mt-5 position-relative">
+        <h3>Torneos Mensuales</h3>
+        <p>Demuestra tus habilidades y gana premios en nuestras competiciones.</p>
+    </div>
+
+    <!-- Cuadros de Eventos -->
+    <div class="row mt-5 position-relative">
+        <div class="col-12 col-md-4 mb-3">
+            <div class="card event-card">
+                <img src="{% static 'media/fornite.jpg' %}" class="card-img-top" alt="Torneo de Fortnite">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Torneo de Fortnite</h5>
+                    <p class="card-text">Únete a nuestro torneo mensual de Fortnite y demuestra tus habilidades en el campo de batalla.</p>
+                    <a href="/events" class="btn btn-dark">Leer más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-5">
+            <div class="card event-card">
+                <img src="{% static 'media/audition.jpg' %}" class="card-img-top" alt="Competición de Audition">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Competición de Audition</h5>
+                    <p class="card-text">Participa en la competición de Audition y baila para ganar premios exclusivos.</p>
+                    <a href="/events" class="btn btn-dark">Leer más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+            <div class="card event-card">
+                <img src="{% static 'media/resident.jpg' %}" class="card-img-top" alt="Survival de Resident Evil">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Survival de Resident Evil</h5>
+                    <p class="card-text">Sobrevive al apocalipsis zombie en nuestro evento de Resident Evil.</p>
+                    <a href="/events" class="btn btn-dark">Leer más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video de Presentación del Clan -->
+    <div class="row mt-5 position-relative">
+        <div class="col-12 text-center">
+            <h3>Conoce a nuestro Clan</h3>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video de presentación del clan" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+  <!-- Miembros Destacados -->
+  <div class="row mt-5 position-relative d-flex justify-content-center">
+    <!-- Miembro 1: Player One -->
+    <div class="col-12 col-md-4 mb-3">
+        <div class="card member-card">
+            <img src="{% static 'media/astro2.jpg' %}" class="card-img-top avatar-img" alt="Player One">
+            <div class="card-body text-center">
+                <h5 class="card-title">Player One</h5>
+                <p class="card-text">Experto en Fortnite y líder del clan.</p>
+                <a href="/miembros" class="btn btn-dark">Ver perfil</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Miembro 2: Dancer Pro -->
+    <div class="col-12 col-md-4 mb-3">
+        <div class="card member-card">
+            <img src="{% static 'media/eddles.jpg' %}" class="card-img-top avatar-img" alt="Dancer Pro">
+            <div class="card-body text-center">
+                <h5 class="card-title">Dancer Pro</h5>
+                <p class="card-text">Campeón en Audition con movimientos impecables.</p>
+                <a href="/miembros" class="btn btn-dark">Ver perfil</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Miembro 3: Zombie Slayer -->
+    <div class="col-12 col-md-4 mb-3">
+        <div class="card member-card">
+            <img src="{% static 'images/zombie_slayer.jpg' %}" class="card-img-top avatar-img" alt="Zombie Slayer">
+            <div class="card-body text-center">
+                <h5 class="card-title">Zombie Slayer</h5>
+                <p class="card-text">Maestro en Resident Evil y defensor del equipo.</p>
+                <a href="/miembros" class="btn btn-dark">Ver perfil</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    <link rel="stylesheet" href="{% static 'styles/home.css '%}">
+</div>
+
+<style>
+    #background-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .mt-5 {
+        margin-top: 150px !important;
+    }
+
+    .mb-5 {
+        margin-bottom: 50px !important;
+    }
+
+    .carousel {
+        margin-top: 50px;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+</style>
+{% endblock %}

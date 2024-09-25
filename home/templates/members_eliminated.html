@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-3">
+    <h2 class="mb-5">Miembros Eliminados</h2>
+
+    <!-- Mostrar mensajes de éxito o error -->
+    {% if messages %}
+    <div class="alert alert-info">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
+    <link rel="stylesheet" href="{% static 'styles/members_eliminated.css' %}">
+
+    <!-- Barra de búsqueda -->
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Buscar por Nickname</span>
+        <input type="text" class="form-control" id="searchNickname" placeholder="Ingresa el nickname">
+    </div>
+
+    <!-- Botón para eliminar un miembro -->
+    <a href="{% url 'delete_member' %}" class="btn btn-primary mb-3">Eliminar un miembro</a>
+
+    <!-- Tabla de miembros eliminados -->
+    <table class="table table-hover table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Número</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Nickname</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Cumpleaños</th>
+                <th scope="col">País</th>
+                <th scope="col">Ciudad</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Modo de Juego</th>
+                <th scope="col">Razón</th>
+                <th scope="col">Reclutado por</th>
+                <th scope="col">Fecha de Eliminación</th>
+            </tr>
+        </thead>
+        <tbody id="membersTable">
+            {% for member in members_eliminated %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ member.nombre }}</td>
+                <td>{{ member.nickname }}</td>
+                <td>{{ member.edad }}</td>
+                <td>{{ member.cumpleaños|date:"d/m/Y" }}</td>
+                <td>{{ member.pais }}</td>
+                <td>{{ member.ciudad }}</td>
+                <td>{{ member.estado_cpl }}</td>
+                <td>{{ member.modo_de_juego }}</td>
+                <td>{{ member.razon|default:"No especificada" }}</td>
+                <td>{{ member.reclutado_por.nickname }}</td>
+                <td>{{ member.fecha_elimiado|date:"d/m/Y H:i" }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="12" class="text-center">No se han eliminado miembros todavía.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Script para filtrar por nickname -->
+<script>
+    document.getElementById('searchNickname').addEventListener('keyup', function() {
+        var input = this.value.toLowerCase();
+        var rows = document.querySelectorAll('#membersTable tr');
+
+        rows.forEach(function(row) {
+            var nickname = row.cells[2].textContent.toLowerCase(); // Columna 3 (Nickname)
+            if (nickname.indexOf(input) > -1) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+<!-- Agregamos algo de estilo adicional inspirado en Resident Evil Village -->
+<style>
+    body {
+    background-color: #fff;
+    background-image: url("{% static 'media/members_eliminated.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  </style>
+{% endblock %}

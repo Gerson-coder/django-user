@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10 gothic-form">
+            <h1 class="text-center gothic-text text-shadow-gothic">Eventos del Clan Village</h1>
+            <p class="text-center gothic-text text-shadow">Sumérgete en nuestros eventos oscuros y demuestra tu valía.</p>
+
+            <!-- Eventos Section -->
+            <div class="row events-section">
+                <div class="col-md-6">
+                    <!-- Torneos de Clanes -->
+                    <div class="event-card">
+                        <h2 class="gothic-text text-shadow-gothic">Torneo de Clanes en Fortnite</h2>
+                        <p>Compite con tu clan y demuestra quién es el más fuerte en el torneo mensual de Fortnite.</p>
+                        <button class="btn-dark">Participar</button>
+                    </div>
+
+                    <!-- Evento de Asistencia -->
+                    <div class="event-card">
+                        <h2 class="gothic-text text-shadow-gothic">Evento de Asistencia en Audition</h2>
+                        <p>Por cada asistencia en Audition, suma 1 punto para tu clan. ¡No faltes a ninguna partida!</p>
+                        <button class="btn-dark">Registrar Asistencia</button>
+                    </div>
+                </div>
+
+                <!-- Ranking de Asistencia -->
+                <div class="col-md-6 attendance-section">
+                    <h2 class="gothic-text text-shadow-gothic">Ranking de Asistencia</h2>
+                    <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th>Miembro</th>
+                                <th>Clan</th>
+                                <th>Puntos de Asistencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Alice</td>
+                                <td>Umbrella</td>
+                                <td>20</td>
+                            </tr>
+                            <tr>
+                                <td>Leon</td>
+                                <td>Raccoon</td>
+                                <td>18</td>
+                            </tr>
+                            <tr>
+                                <td>Chris</td>
+                                <td>Stars</td>
+                                <td>15</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Noticias Section -->
+            <div class="news-section">
+                <h2 class="gothic-text text-shadow-gothic">Próximos Eventos</h2>
+                <div class="news-item">
+                    <h3 class="gothic-text text-shadow-gothic">Nueva Competencia de Sobrevivencia</h3>
+                    <p>Prepárate para un evento de resistencia en el que solo los más fuertes podrán sobrevivir. ¡Próximamente! Este evento pondrá a prueba tus habilidades y resistencia en un entorno desafiante y lleno de sorpresas. No te lo pierdas y demuestra que eres el mejor.</p>
+                </div>
+                <div class="news-item">
+                    <h3 class="gothic-text text-shadow-gothic">Torneo de Clanes - Diciembre</h3>
+                    <p>El próximo torneo de clanes será en diciembre. ¡Asegúrate de entrenar y estar listo! Este torneo será una batalla épica entre los mejores clanes, con premios increíbles y la oportunidad de demostrar tu valía. ¡Prepárate para la acción!</p>
+                </div>
+                <div class="news-item">
+                    <h3 class="gothic-text text-shadow-gothic">Evento Especial de Halloween</h3>
+                    <p>Este octubre, celebra Halloween con un evento oscuro y lleno de sorpresas. ¡No te lo pierdas! Disfruta de actividades temáticas, desafíos espeluznantes y recompensas exclusivas. ¡Únete a la diversión y vive una experiencia inolvidable!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="{% static 'styles/events.css' %}">
+</div>
+
+
+
+
+
+<style>
+
+body {
+        background-color: #fff;
+        background-image: url("{% static 'media/evento2.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+  
+
+</style>
+   
+
+{% endblock %}

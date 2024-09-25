@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+    
+
+    {% if error %}
+    <div class="alert alert-danger">{{ error }}</div>
+
+    {% endif %}
+
+  
+  
+
+    <form method="POST">
+        {% csrf_token %}
+        <link rel="stylesheet" href="{% static 'styles/delete_member.css}">
+        <div class="mb-3">
+            <label for="nickname" class="form-label">Nickname</label>
+            <input type="text" class="form-control" id="nickname" name="nickname" placeholder="Buscar nickname" required>
+        </div>
+        <div class="mb-3">
+            <label for="razon" class="form-label">Reason</label>
+            <textarea class="form-control" id="razon" name="razon" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger">Eliminar miembro</button>
+    </form>
+
+     
+     
+ </div>
+
+</div>
+
+
+
+<!-- Autocomplete Script -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script>
+    $(function() {
+        $("#nickname").autocomplete({
+            source: "{% url 'autocomplete_nickname' %}",
+            select: function(event, ui) {
+                $('#nickname').val(ui.item.value);
+            }
+        });
+    });
+</script>
+
+<!-- Agregamos algo de estilo adicional inspirado en Resident Evil Village -->
+<style>
+  body {
+  background-color: #fff;
+  background-image: url("{% static 'media/members_eliminated.jpg' %}");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+</style>
+{% endblock %}

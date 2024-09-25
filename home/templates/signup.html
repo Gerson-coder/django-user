@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="text-shadow mt-5">
+    <video autoplay muted loop playsinline preload="metadata" id="background-video">    
+        <source src="{% static 'media/comprimido2.mp4' %}" type="video/mp4">
+    </video>
+    
+    <h1 class="mb-4 gothic-title">Registrarse en el Clan</h1>
+
+    <!-- Mostrar error si existe -->
+    {% if error %}
+    <div class="alert alert-danger alert-custom" role="alert">
+        {{ error }}
+    </div>
+    {% endif %}
+
+    <!-- Formulario de registro -->
+    <form method="POST" class="needs-validation dark-form" novalidate>
+        {% csrf_token %}
+        
+        <!-- Nombre de usuario -->
+        <div class="mb-3">
+            <label for="id_username" class="form-label gothic-label">Nombre de usuario</label>
+            {{ form.username }}
+            <div class="text-danger">
+                {{ form.username.errors }}
+            </div>
+        </div>
+
+        <!-- Nombre -->
+        <div class="mb-3">
+            <label for="id_first_name" class="form-label gothic-label">Nombre</label>
+            {{ form.first_name }}
+            <div class="text-danger">
+                {{ form.first_name.errors }}
+            </div>
+        </div>
+
+        <!-- Edad -->
+        <div class="mb-3">
+            <label for="id_edad" class="form-label gothic-label">Edad</label>
+            {{ form.edad }}
+            <div class="text-danger">
+                {{ form.edad.errors }}
+            </div>
+        </div>
+
+        <!-- Nickname -->
+        <div class="mb-3">
+            <label for="id_nickname" class="form-label gothic-label">Nickname</label>
+            {{ form.nickname }}
+            <div class="text-danger">
+                {{ form.nickname.errors }}
+            </div>
+        </div>
+
+        <!-- Fecha de Cumpleaños -->
+        <div class="mb-3">
+            <label for="id_cumpleaños" class="form-label gothic-label">Cumpleaños</label>
+            {{ form.cumpleaños }}
+            <div class="text-danger">
+                {{ form.cumpleaños.errors }}
+            </div>
+        </div>
+
+        <!-- País -->
+        <div class="mb-3">
+            <label for="id_pais" class="form-label gothic-label">País</label>
+            {{ form.pais }}
+            <div class="text-danger">
+                {{ form.pais.errors }}
+            </div>
+        </div>
+
+        <!-- Ciudad -->
+        <div class="mb-3">
+            <label for="id_ciudad" class="form-label gothic-label">Ciudad</label>
+            {{ form.ciudad }}
+            <div class="text-danger">
+                {{ form.ciudad.errors }}
+            </div>
+        </div>
+
+        <!-- Estado civil -->
+        <div class="mb-3">
+            <label for="id_estado_cpl" class="form-label gothic-label">Estado civil</label>
+            {{ form.estado_cpl }}
+            <div class="text-danger">
+                {{ form.estado_cpl.errors }}
+            </div>
+        </div>
+
+        <!-- Modo de Juego -->
+        <div class="mb-3">
+            <label for="id_modo_de_juego" class="form-label gothic-label">Modo de juego</label>
+            {{ form.modo_de_juego }}
+            <div class="text-danger">
+                {{ form.modo_de_juego.errors }}
+            </div>
+        </div>
+
+        <!-- Contraseña -->
+        <div class="mb-3">
+            <label for="id_password" class="form-label gothic-label">Contraseña</label>
+            {{ form.password }}
+            <div class="text-danger">
+                {{ form.password.errors }}
+            </div>
+        </div>
+
+        <!-- Confirmar contraseña -->
+        <div class="mb-3">
+            <label for="id_password_confirm" class="form-label gothic-label">Repite la contraseña</label>
+            {{ form.password_confirm }}
+            <div class="text-danger">
+                {{ form.password_confirm.errors }}
+            </div>
+        </div>
+
+        <!-- Reclutado por -->
+        <div class="mb-3">
+            <label for="id_reclutado_por" class="form-label gothic-label">Reclutado por</label>
+            {{ form.reclutado_por }}
+            <div class="text-danger">
+                {{ form.reclutado_por.errors }}
+            </div>
+        </div>
+
+        <!-- Botón de envío -->
+        <div class="d-grid">
+            <button type="submit" class="btn btn-dark btn-lg gothic-button">Unirse al Clan</button>
+        </div>
+        <link rel="stylesheet" href="{% static 'styles/signup.css' %}">
+    </form>
+</div>
+
+<style>
+    #background-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+</style>
+
+{% endblock %}
