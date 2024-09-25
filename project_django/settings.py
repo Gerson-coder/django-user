@@ -81,17 +81,21 @@ WSGI_APPLICATION = 'project_django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# configurando para railway
+
+
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('DATABASE_NAME', 'deploy'),  # Reemplaza 'deploy' con tu valor por defecto si existe
-        'USER': os.getenv('DATABASE_USER', 'root'),  # Reemplaza 'root' con tu valor por defecto si existe
-        'PASSWORD': os.getenv('DATABASE_PASSWORD', '10443313'),  # Reemplaza con tu valor por defecto si existe
-        'HOST': os.getenv('DATABASE_HOST', 'localhost'),  # Asegúrate de usar el host correcto de Railway
-        'PORT': os.getenv('DATABASE_PORT', '3306'),  # Asegúrate de usar el puerto correcto de Railway
+        'NAME': 'railway',  # El nombre de la base de datos
+        'USER': 'root', 
+        'PASSWORD': 'SrhIhHgLMirFooAsZwWTzOmjhJzoZAwq',
+        'HOST': 'autorack.proxy.rlwy.net',  # Host público
+        'PORT': '25252',  # Puerto público
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
