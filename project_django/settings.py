@@ -11,11 +11,12 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os 
 from pathlib import Path
+import pymysql
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+pymysql.install_as_MySQLdb()
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -90,6 +91,7 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
